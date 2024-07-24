@@ -34,11 +34,10 @@ P1: BEGIN
     fetch first row only;
 
     -- Populate EMPLOYEE table
-    set v_emp_no = substr(HEX(rand()), 1, 6);
     set v_phone_no = substr(HEX(rand()), 1, 4);
     set v_hire_date = date('2023-01-01') + int(rand() * 365 * 10) DAYS;
     set v_job = 'JOB' || substr(HEX(rand()), 1, 4);
-    set v_sex = 'M';
+    set v_sex = case when rand() < 0.5 then 'M' else 'F' end;
     set v_birth_date = date('1960-01-01') + int(rand() * 365 * 50) DAYS;
     set v_salary = decimal(30000 + rand() * 70000, 9, 2);
     set v_bonus = decimal(rand() * 10000, 9, 2);
@@ -46,7 +45,10 @@ P1: BEGIN
     
     insert into cmpsys.EMPLOYEE 
     (EMPNO, FIRSTNME, MIDINIT, LASTNAME, WORKDEPT, PHONENO, HIREdate, JOB, EDLEVEL, SEX, BIRTHdate, SALARY, BONUS, COMM)
-    VALUES (v_emp_no, v_first_name, v_mid_init, v_last_name, v_work_dept, v_phone_no, v_hire_date, v_job, v_ed_level, 
+    VALUES (In_empno, In_fname, In_midinit, In_lname, v_work_dept, v_phone_no, v_hire_date, v_job, In_edlevel, 
     v_sex, v_birth_date, v_salary, v_bonus, v_comm);
         
 end P1;
+
+
+-- call cmpsys.popemp('1001', 'Ravisankar', 'P', 'Pandian', 15)

@@ -42,7 +42,7 @@ Writing clean, maintainable, and readable code is crucial for successful softwar
 Creating custom data types can be achieved in various programming languages. For example, in Python, you can use the `class` keyword to define a custom data type. In SQL Server, you can use the `CREATE TYPE` statement to create a custom data type. Custom data types can help to make your code more efficient, readable, and maintainable.
 
 
-## Dos and Don't in UDF
+## Dos and Don't
 
 - If you can choose between built-in SQL functions and UDFs, choose built-in SQL 
 functions.

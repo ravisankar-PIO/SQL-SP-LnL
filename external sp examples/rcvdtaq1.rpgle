@@ -7,6 +7,7 @@ dcl-pr main  extpgm('RCVDTAQ1');
   *N char(10);
   *N char(40);
 end-pr;
+
 // Procedure interface definition a.k.a input parameters
 dcl-pi main;    
   dqname      char(10);

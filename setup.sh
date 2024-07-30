@@ -57,7 +57,7 @@ source ~/.profile
 printheading "Update the yum repository and existing packages..."
 yum update -y  
 yum install ibmi-repos -y
-yum install bob
+yum install bob -y
 
 
 
@@ -103,6 +103,14 @@ makei build
 # ==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==
 cd ~ 
 git clone https://github.com/ravisankar-PIO/SQL-SP-LnL
+
+
+
+# ==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==
+# Install TN5250
+# ==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==
+cd ~ 
+yum install tn5250 -y
 
 # ==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==
 # All done!

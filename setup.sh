@@ -3,7 +3,7 @@
 # Program       : setup.sh
 # Author        : Ravisankar Pandian
 # Company       : Programmers.io
-# Date Written  : 07/30/2024
+# Date Written  : 24/05/2024
 # Copyright     : Programmers.io
 # ------------------------------------------------------------------------- #
 
@@ -68,6 +68,19 @@ printheading "Setup GIT..."
 yum install git -y
 git config --global user.name 'Ravisankar Pandian' 
 git config --global user.email ravisankar.pandian@programmers.io
+
+
+# ==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==
+# Change the Prompt String to reflect Git Status.
+# ==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==
+printheading "Setup the Prompt String to show Git Status..."
+cd ~
+wget --show-progress https://raw.githubusercontent.com/ravisankar-PIO/gitonibmi/main/gitprompt.sh
+mv gitprompt.sh .gitprompt.sh
+echo "PROMPT_COMMAND='__posh_git_ps1 \"\${VIRTUAL_ENV:+(\`basename \$VIRTUAL_ENV\`)}\\[\\e[32m\\]\\u\\[\\e[0m\\]@\\h:\\[\\e[33m\\]\\w\\[\\e[0m\\] \" \"\\\\\\\$ \";'\$PROMPT_COMMAND" >> .profile
+echo "source ~/.gitprompt.sh" >> .profile
+source ~/.profile
+
 
 # ==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==
 # Generate SSH Keys

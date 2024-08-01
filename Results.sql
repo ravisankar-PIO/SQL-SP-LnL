@@ -1,33 +1,41 @@
--------------------------------------------------------------------------------------
--- Stored Procedure
--------------------------------------------------------------------------------------
-call cmpsys.popemp();
-select count(1) from cmpsys.EMPLOYEE;
-delete from cmpsys.EMPLOYEE;
-select * from cmpsys.employee;
+-- STORED PROCEDURE
+-----------------------------------------------------------------------------------------------
+-- Populate Department Table - No Parameters
+select * from cmpsys.department;
+call cmpsys.populate_department_table(); -- Populate 5 department records
+select * from cmpsys.department;
+stop;
+-----------------------------------------------------------------------------------------------
 
+-----------------------------------------------------------------------------------------------
 -- Check the Catalog Tables
 select  * from    qsys2.sysprocs
 where   specific_schema = 'CMPSYS';
+stop;
+-----------------------------------------------------------------------------------------------
 
--- Populate Table
-select * from cmpsys.department;
-call cmpsys.popdept();
-
+-----------------------------------------------------------------------------------------------
 -- Insert Employee
 delete from cmpsys.employee where empno = '1001';
 select * from cmpsys.employee where empno = '1001';
-call cmpsys.insemp('1001', 'Ravisankar', 'P', 'Pandian', 15);
+call cmpsys.InsertEmployee('1001', 'Ravisankar', 'P', 'Pandian', 15);
+stop;
+-----------------------------------------------------------------------------------------------
 
--- Retrieve Employee
-create variable cmpsys.fname char(12);
-create variable cmpsys.lname char(15);
-create variable cmpsys.dname char(36);
-call cmpsys.retemp('1001', cmpsys.fname, cmpsys.lname, cmpsys.dname);
-values (cmpsys.fname, cmpsys.lname, cmpsys.dname);
+-----------------------------------------------------------------------------------------------
+-- Retrieve the Senior Most Employee's Name and DOB
+create or replace variable cmpsys.mychar30 char(30);
+create or replace variable cmpsys.mydate date;
+call cmpsys.RetrieveSeniorEmployee('939',cmpsys.mychar30, cmpsys.mydate);
+values(cmpsys.mychar30, cmpsys.mydate);
+stop;
+-----------------------------------------------------------------------------------------------
 
--- Result Set
-call cmpsys.getspecemp('377');
+-----------------------------------------------------------------------------------------------
+-- Retrieve the result set of all the employee details for the given dept.
+call cmpsys.getspecemp('939');
+stop;
+-----------------------------------------------------------------------------------------------
 
 -- Data Queue
 -------------------------------------------------------------------------------------

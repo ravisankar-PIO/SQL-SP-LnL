@@ -13,7 +13,7 @@ begin
     from    cmpsys.employee
     where   workdept = deptID
     order by birthdate 
-    fetch first row only
+    fetch first row only;
 end;
 
 -- create variable cmpsys.mychar30 char(30);

@@ -1,13 +1,12 @@
-create or replace procedure cmpsys.snddta (
+create or replace procedure CMPSYS.SNDDTA (
   In dqName   char(10),
   In dqLib    char(10),
   In dqData   char(40)
 )
 
 language rpgle
-specific cmpsys.snddta
+specific CMPSYS.SNDDTA
 not deterministic
 no sql
-called on null input
-external name 'cmpsys/snddtaq1'
-parameter style general with nulls;
+external name 'CMPSYS/SNDDTAQ1'
+parameter style general;

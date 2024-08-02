@@ -1,4 +1,4 @@
-create or replace procedure cmpsys.popemp(
+create or replace procedure cmpsys.InsertEmployee(
   In  In_empno      char(6),
   In  In_fname      char(12),
   In  In_midinit    char(1),
@@ -8,7 +8,7 @@ create or replace procedure cmpsys.popemp(
 language sql
 Result Sets 0
 Modifies SQL Data
-Specific popemp
+Specific insemp
 P1: BEGIN
     declare v_dept_no char(3);
     declare v_dept_name varchar(36);
@@ -49,6 +49,3 @@ P1: BEGIN
     v_sex, v_birth_date, v_salary, v_bonus, v_comm);
         
 end P1;
-
-
--- call cmpsys.popemp('1001', 'Ravisankar', 'P', 'Pandian', 15)

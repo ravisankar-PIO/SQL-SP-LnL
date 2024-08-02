@@ -16,4 +16,4 @@ begin
     end;
 end;
 
--- call cmpsys.getspecemp('533');
+-- call cmpsys.getspecemp('556');

@@ -15,7 +15,3 @@ begin
   return substr(fullpath, endSlashPos + 1); -- ----------------- use substring to get only the file name. 
   
 end;
-
--- values cmpsys.xtrfile('/usr/scottf/subdir1/subdir2/subdir3/subfile.sfx');
--- return substr(fullpath, endSlashPos + 1);
--- return substr(fullpath, regexp_instr(fullpath, '/', 1, regexp_count(fullpath, '/')) + 1);

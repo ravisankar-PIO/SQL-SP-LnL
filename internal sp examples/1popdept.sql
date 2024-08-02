@@ -1,8 +1,10 @@
 create or replace procedure cmpsys.populate_department_table()
+
 language sql
 Result Sets 0
 Modifies SQL Data
 Specific popdept
+
 begin
     declare i int default 1;
     declare deptno char(3);

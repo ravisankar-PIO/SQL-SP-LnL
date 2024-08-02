@@ -20,5 +20,3 @@ begin
   return output_day;
 end;
 
--- select firstnme, birthdate, cmpsys.show_day(birthdate) from cmpsys.employee 
--- where cmpsys.show_day(birthdate) = 'Sunday';

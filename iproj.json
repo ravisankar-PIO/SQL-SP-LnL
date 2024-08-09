@@ -1,0 +1,4 @@
+{
+  "description": "sql lunch and learn examples",
+  "compileCommand": "/QOpenSys/pkgs/bin/makei compile -f {filename}"
+}
